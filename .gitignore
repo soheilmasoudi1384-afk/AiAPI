@@ -1,0 +1,14 @@
+.env
+*.db
+*.db-wal
+*.db-shm
+__pycache__/
+*.pyc
+.pytest_cache/
+
+frontend/node_modules/
+
+browser_profile/
+debug/
+results.json
+results.html

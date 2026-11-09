@@ -1,0 +1,26 @@
+.skeleton {
+  display: block;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--surface-3) 25%, var(--surface-2) 50%, var(--surface-3) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+.loader { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 40vh; color: var(--text-3); }
+.spinner { width: 20px; height: 20px; border: 2.5px solid var(--border-strong); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.empty { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 40px 20px; text-align: center; }
+.emptyIcon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--accent-soft); color: var(--accent-text); margin-bottom: 4px; }
+.emptyIconDanger { background: var(--danger-soft); color: var(--danger-text); }
+.emptyTitle { font-size: 15px; font-weight: 700; }
+.emptyText { max-width: 420px; color: var(--text-3); font-size: 13.5px; margin-bottom: 6px; }
+
+.alert { display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px; border-radius: var(--r-md); border: 1px solid transparent; font-size: 13.5px; }
+.alert > svg { flex: none; margin-top: 3px; }
+.alertBody { display: flex; flex-direction: column; gap: 1px; flex: 1; min-width: 0; }
+.info { background: var(--info-soft); color: var(--accent-text); border-color: color-mix(in srgb, var(--accent) 22%, transparent); }
+.warning { background: var(--warning-soft); color: var(--warning-text); border-color: color-mix(in srgb, var(--warning) 28%, transparent); }
+.danger { background: var(--danger-soft); color: var(--danger-text); border-color: color-mix(in srgb, var(--danger) 28%, transparent); }
+.success { background: var(--success-soft); color: var(--success-text); border-color: color-mix(in srgb, var(--success) 28%, transparent); }

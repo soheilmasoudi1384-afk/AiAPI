@@ -1,0 +1,4 @@
+.head { margin-bottom: 26px; }
+.title { font-size: 26px; font-weight: 800; line-height: 1.5; }
+.subtitle { margin-top: 4px; color: var(--text-3); font-size: 14.5px; }
+.form { display: flex; flex-direction: column; gap: 16px; }

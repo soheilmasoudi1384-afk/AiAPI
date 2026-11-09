@@ -1,0 +1,24 @@
+.labelCell { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; font-weight: 600; }
+.never { color: var(--text-3); }
+.loading { display: flex; flex-direction: column; gap: 10px; padding: 0 20px 20px; }
+.note { padding: 0 20px 20px; }
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 16px 18px;
+  border-radius: var(--r-lg);
+  border: 1px solid color-mix(in srgb, var(--success) 40%, transparent);
+  background: var(--success-soft);
+  color: var(--success-text);
+  animation: rise 0.25s ease-out;
+}
+.bannerHead { display: flex; align-items: center; justify-content: space-between; }
+.bannerHead strong { font-size: 15px; }
+.banner p { font-size: 13.5px; }
+.keyRow { display: flex; gap: 10px; align-items: stretch; flex-wrap: wrap; }
+.keyValue { flex: 1; min-width: 0; padding: 9px 12px; border-radius: var(--r-sm); background: var(--surface); color: var(--text); border: 1px solid var(--border); word-break: break-all; user-select: all; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(-6px); } }

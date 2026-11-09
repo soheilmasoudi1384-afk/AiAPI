@@ -1,0 +1,5 @@
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.reveal { display: flex; flex-direction: column; gap: 12px; }
+.key { display: block; padding: 12px 14px; border-radius: var(--r-sm); background: var(--surface-2); border: 1px solid var(--border); word-break: break-all; user-select: all; line-height: 1.7; }
+
+@media (max-width: 560px) { .pair { grid-template-columns: 1fr; } }

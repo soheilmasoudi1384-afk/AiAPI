@@ -1,0 +1,140 @@
+/* توکن‌های طراحی و ریست. استایل هر صفحه و هر کامپوننت کنار خودش (*.module.css) است. */
+
+:root {
+  color-scheme: light;
+  --font: 'Vazirmatn', Tahoma, 'Segoe UI', system-ui, sans-serif;
+  --mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #f6f7f9;
+  --surface-3: #eceef2;
+  --border: #e4e7ec;
+  --border-strong: #cfd4dc;
+  --text: #101828;
+  --text-2: #475467;
+  --text-3: #667085;
+
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-soft: #eef0ff;
+  --accent-text: #4338ca;
+  --on-accent: #ffffff;
+
+  --success: #079455;
+  --success-text: #067647;
+  --success-soft: #e8f7ef;
+  --warning: #dc6803;
+  --warning-text: #b54708;
+  --warning-soft: #fff4e5;
+  --danger: #d92d20;
+  --danger-text: #b42318;
+  --danger-soft: #fdecea;
+  --info-soft: #eef4ff;
+
+  --chart-1: #4f46e5;
+  --chart-2: #8b93ff;
+  --chart-grid: #e8ebf0;
+
+  --ring: 0 0 0 3px rgb(79 70 229 / 0.28);
+  --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.05);
+  --shadow-md: 0 4px 14px -2px rgb(16 24 40 / 0.08), 0 2px 4px -2px rgb(16 24 40 / 0.05);
+  --shadow-lg: 0 24px 56px -12px rgb(16 24 40 / 0.22);
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --sidebar-w: 264px;
+  --topbar-h: 64px;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0c10;
+  --surface: #12151b;
+  --surface-2: #171b23;
+  --surface-3: #1f242e;
+  --border: #232935;
+  --border-strong: #343c4c;
+  --text: #edf0f5;
+  --text-2: #a9b1c0;
+  --text-3: #8791a5;
+
+  --accent: #6366f1;
+  --accent-hover: #7578f5;
+  --accent-soft: #1b1e3d;
+  --accent-text: #a9acff;
+
+  --success: #2fbf80;
+  --success-text: #5fd9a3;
+  --success-soft: #0f2a1f;
+  --warning: #f09a2b;
+  --warning-text: #f5b457;
+  --warning-soft: #2e2110;
+  --danger: #f0524a;
+  --danger-text: #ff8a82;
+  --danger-soft: #331816;
+  --info-soft: #14213a;
+
+  --chart-1: #7c80ff;
+  --chart-2: #3f4388;
+  --chart-grid: #232935;
+
+  --ring: 0 0 0 3px rgb(124 128 255 / 0.4);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 6px 18px -4px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 24px 56px -12px rgb(0 0 0 / 0.7);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14.5px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, p { margin: 0; }
+a { color: var(--accent-text); text-underline-offset: 3px; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+img, svg { display: block; }
+::selection { background: var(--accent); color: var(--on-accent); }
+
+:focus-visible { outline: none; box-shadow: var(--ring); border-radius: var(--r-sm); }
+
+/* مقادیر لاتین (کلید، آدرس، کد) همیشه چپ‌به‌راست و تک‌فاصله */
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 0.86em;
+}
+.num { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+* { scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

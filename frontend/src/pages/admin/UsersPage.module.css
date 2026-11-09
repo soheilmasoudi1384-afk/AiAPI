@@ -1,0 +1,23 @@
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 0 20px 14px; }
+.toolbar > :first-child { flex: 1; max-width: 360px; }
+.refreshing { opacity: 0.85; }
+.loading { display: flex; flex-direction: column; gap: 8px; padding: 0 20px 20px; }
+.error { margin: 0 20px 12px; padding: 10px 12px; border-radius: var(--r-sm); background: var(--danger-soft); color: var(--danger-text); font-size: 13px; }
+.muted { color: var(--text-3); }
+.negative { color: var(--danger-text); font-weight: 700; }
+
+.userCell { display: inline-flex; align-items: center; gap: 12px; min-width: 0; }
+.avatar { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-text); font-weight: 800; flex: none; }
+.userText { display: flex; flex-direction: column; min-width: 0; line-height: 1.45; }
+.userText strong { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px; }
+.userText small { color: var(--text-3); }
+
+.usage { display: flex; flex-direction: column; gap: 6px; min-width: 120px; }
+.actions { display: inline-flex; gap: 2px; }
+
+@media (max-width: 720px) {
+  .toolbar { padding: 0 16px 14px; }
+  .toolbar > :first-child { max-width: none; }
+  .usage { align-items: flex-end; width: 140px; }
+  .userText strong { max-width: 160px; }
+}

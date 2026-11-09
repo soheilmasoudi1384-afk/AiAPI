@@ -1,0 +1,26 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+}
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px 0;
+}
+.heading { min-width: 0; }
+.title { font-size: 15.5px; font-weight: 700; line-height: 1.5; }
+.description { margin-top: 2px; color: var(--text-3); font-size: 13px; }
+.actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; flex: none; }
+.body { padding: 18px 20px 20px; }
+.flush { padding: 14px 0 0; }
+.header + .body { padding-top: 16px; }
+
+@media (max-width: 560px) {
+  .header { padding: 16px 16px 0; flex-wrap: wrap; }
+  .body { padding: 16px; }
+}

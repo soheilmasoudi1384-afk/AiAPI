@@ -1,0 +1,80 @@
+.figure { margin: 0; }
+.chart { display: flex; gap: 10px; }
+
+.axis { display: flex; flex-direction: column; justify-content: space-between; flex: none; min-width: 38px; font-size: 11.5px; color: var(--text-3); line-height: 1; text-align: end; }
+.axis > span { transform: translateY(-1px); }
+.axis > span:last-child { transform: translateY(-1px); }
+
+.plot { position: relative; flex: 1; min-width: 0; }
+.grid { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none; }
+.grid span { border-top: 1px dashed var(--chart-grid); }
+.grid span:last-child { border-top: 1px solid var(--border-strong); }
+
+.columns { position: relative; display: grid; grid-template-columns: repeat(var(--count), minmax(0, 1fr)); gap: clamp(4px, 1.4vw, 14px); height: 100%; padding-inline: 4px; }
+.column { position: relative; display: flex; align-items: flex-end; justify-content: center; height: 100%; border-radius: 6px; outline: none; }
+.column:hover, .column:focus-visible { background: color-mix(in srgb, var(--accent) 7%, transparent); }
+.column:focus-visible { box-shadow: var(--ring); }
+
+.stack { display: flex; flex-direction: column-reverse; width: 100%; max-width: 44px; min-height: 0; border-radius: 6px 6px 2px 2px; overflow: hidden; transition: height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.segment { display: block; min-height: 2px; }
+.primary { background: var(--chart-1); }
+.secondary { background: var(--chart-2); }
+.stub { display: block; width: 100%; height: 3px; background: var(--border-strong); border-radius: 2px; }
+
+.tooltip {
+  position: absolute;
+  inset-block-end: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 150px;
+  padding: 10px 12px;
+  border-radius: var(--r-md);
+  background: var(--text);
+  color: var(--bg);
+  font-size: 12.5px;
+  box-shadow: var(--shadow-lg);
+  pointer-events: none;
+}
+.column:hover .tooltip, .column:focus-visible .tooltip { display: flex; }
+.edgeLeft { left: 0; transform: none; }
+.edgeRight { left: auto; right: 0; transform: none; }
+.tipRow { display: flex; align-items: center; gap: 7px; }
+.tipRow b { margin-inline-start: auto; font-weight: 700; }
+.swatch { display: inline-block; width: 9px; height: 9px; border-radius: 3px; flex: none; }
+
+.labels { display: flex; gap: 10px; margin-top: 8px; }
+.axisSpacer { flex: none; min-width: 38px; }
+.labelRow { flex: 1; display: grid; grid-template-columns: repeat(var(--count), minmax(0, 1fr)); gap: clamp(4px, 1.4vw, 14px); padding-inline: 4px; }
+.labelRow span { text-align: center; font-size: 11.5px; color: var(--text-3); white-space: nowrap; overflow: visible; }
+.hidden { visibility: hidden; }
+.legend { display: flex; gap: 18px; justify-content: center; margin-top: 12px; font-size: 12.5px; color: var(--text-2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+
+.ring { position: relative; flex: none; }
+.ringTrack { stroke: var(--surface-3); }
+.ringValue { transition: stroke-dashoffset 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.ringValue.ok { stroke: var(--accent); }
+.ringValue.warn { stroke: var(--warning); }
+.ringValue.full { stroke: var(--danger); }
+.ringCenter { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+
+.meter { height: 8px; border-radius: 999px; background: var(--surface-3); overflow: hidden; }
+.meterFill { display: block; height: 100%; border-radius: inherit; transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.meterFill.ok { background: var(--accent); }
+.meterFill.warn { background: var(--warning); }
+.meterFill.full { background: var(--danger); }
+
+@media (max-width: 560px) {
+  .axis, .axisSpacer { min-width: 30px; font-size: 10.5px; }
+  .chart, .labels { gap: 6px; }
+}
+
+.share { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.shareHead { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 7px; font-size: 13.5px; }
+.shareHead span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.shareHead b { font-weight: 700; }
+.shareHead small { margin-inline-start: 8px; color: var(--text-3); font-size: 12px; }
